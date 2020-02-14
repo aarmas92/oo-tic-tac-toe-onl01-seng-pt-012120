@@ -50,7 +50,7 @@ class TicTacToe
   end
   
   def current_player
-  
+    #if the turn count is an even number, that means O just went, so the next/current player is X
     num_turns = turn_count
     if num_turns % 2 == 0
       player = "X"
@@ -125,16 +125,16 @@ class TicTacToe
       end
     end
   end
-
-  def play(board)
-    until over?(board) == true
-      turn(board)
+  
+  def play
+    until over? == true
+      turn
     end
   
-    if won?(board)
-      puts "Congratulations #{winner(board)}!"
-    elsif draw?(board)
-      puts "Cats Game!"
+    if won?
+      puts "Congratulations #{winner}!"
+    elsif draw?
+      puts "Cat's Game!"
     end
   end
 
